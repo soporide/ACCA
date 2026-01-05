@@ -6,7 +6,7 @@ Full runnable implementation of ACCA (SNJNG + DeepPA + DeepPER + CTRL with NODE 
 
 This file is designed to be:
 - Executable end-to-end (no pseudocode / no TODO placeholders)
-- Faithful to the key equations extracted from ACPS08022025_JOC.docx (ACCA paper draft)
+- Based on ACCA paper draft
 - Practical: supports *linear-time* (O(N+|E|)) simulation/training loops by using sparse message passing
 - Safe: includes numerical stability guards and test assertions
 
@@ -65,8 +65,8 @@ except Exception:
 
 def set_seed(seed: int) -> None:
     """
-    Global determinism + performance sanity for CPU workloads.
-    For small/medium graphs on CPU, PyTorch's default high thread count can *hurt* performance
+    Global determinism + performance sanity for GPU/CPU workloads.
+    For small/medium graphs on GPU/CPU, PyTorch's default high thread count can *hurt* performance
     dramatically (thread launch overhead). We cap threads to 1 here for predictable runtime.
     """
     # Performance guard for small ops (index_add/scatter_add in message passing)

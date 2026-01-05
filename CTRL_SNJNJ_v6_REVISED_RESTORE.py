@@ -1,6 +1,6 @@
 
 """
-CTRL_SNJNJ_v3_full.py
+CTRL_SNJNG_v6_full.py
 
 Full runnable implementation of ACCA (SNJNG + DeepPA + DeepPER + CTRL with NODE + ITDE).
 
@@ -10,7 +10,7 @@ This file is designed to be:
 - Practical: supports *linear-time* (O(N+|E|)) simulation/training loops by using sparse message passing
 - Safe: includes numerical stability guards and test assertions
 
-Key equations (as extracted from the doc):
+Key equations:
 (1)  S_t = SNJNG(t)
 (2)  A_t ∈ R^n
 (3)  dS/dt = f_θ(S_t, A_t)
